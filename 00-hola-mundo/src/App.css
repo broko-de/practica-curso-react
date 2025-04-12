@@ -37,6 +37,7 @@
     font-weight: 300;
     margin-top: .75rem;
     margin-bottom: 1rem;
+    min-height: 3rem;
 }
 
 .my-courseCard-bodyTags{
@@ -65,6 +66,8 @@
 }
 
 .my-courseCard-button{
+    background-color: #d6d6d6;
+    color: #000;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -81,19 +84,29 @@
     border-width: 1px;
     border-color: #0009;
     border-radius: .5rem;
+    cursor: pointer;
+    text-decoration: none;
 }
+
+.my-courseCard-button:hover{
+    background-color: #ffffff;
+    color: #000;
+    border-color: #0009;
+    transition: all 0.3s ease-in-out;   
+}
+
 .my-courseCard-button>svg{
     width: 25%;
 }
 
-.my-courseCard-enroll{
+.my-courseCard-add{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
 }
 
-.my-courseCard-enrollButton{
+.my-courseCard-addButton{
     background-color: #ffcc01;
     color: #000;
     font-weight: 600;
@@ -109,23 +122,42 @@
     border-radius: .5rem;
     cursor: pointer;
 }
+.my-courseCard-addButton:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;   
+}
 
-.my-courseCard-enrollButton.is-enrolled{
+.my-courseCard-addButton.is-added{
     background-color: #00d8ff;
     color: #fff;
     border-color: #00d8ff;
     transition: all 0.3s ease-in-out;   
 }
 
-.my-courseCard-enrollButton.is-enrolled:hover{
-    background-color: #00d8ff;
-    color: #000;
-    border-color: #00d8ff;
-    transform: scale(1.15);
+.my-courseCard-addButton.is-added:hover{
+    background-color: #f2597331;
+    color: #FFF;
+    border-color: #f25972;
 }
 
-.my-courseCard-enrollButton:hover{
+.my-courseCard-addButton:hover{
     background-color: #ffcc01;
     color: #000;
     border-color: #ffcc01;
+}
+
+.my-courseCard-addButton.is-added:hover .my-courseCard-removeButton{
+    display: block;
+}
+
+.my-courseCard-removeButton{
+    display: none;
+}
+
+.my-courseCard-textButton{
+    display: block;
+}
+
+.my-courseCard-addButton.is-added:hover .my-courseCard-textButton{
+    display: none;
 }
