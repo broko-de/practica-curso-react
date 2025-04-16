@@ -1,0 +1,29 @@
+{
+  "name": "practica-curso-react",
+  "version": "1.0.0",
+  "description": "Ejercicios de ejemplos de curso de midudev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "projects/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broko-de/practica-curso-react.git"
+  },
+  "keywords": [],
+  "author": "Broke-de",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/broko-de/practica-curso-react/issues"
+  },
+  "homepage": "https://github.com/broko-de/practica-curso-react#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
+}

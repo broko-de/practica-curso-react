@@ -1,0 +1,163 @@
+#root{
+    width: 1200px;
+    margin-top: 80px;
+}
+.my-gridCourse{
+    display: grid;
+    grid-template-rows:  minmax(300px, auto);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem
+}
+.my-courseCard{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.my-courseCard-header > img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.my-courseCard-body>a{
+    text-decoration: none;
+    color: #FFF ;
+}
+
+.my-courseCard-body>a:hover{
+    color:#00d8ff
+}
+.my-courseCard-body>a>h2{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+
+.my-courseCard-body>p{
+    font-weight: 300;
+    margin-top: .75rem;
+    margin-bottom: 1rem;
+    min-height: 3rem;
+}
+
+.my-courseCard-bodyTags{
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    padding: 0px;
+}
+
+
+.my-courseCard-bodyTags>li {
+    list-style: none;
+    background: rgb(243 244 246);
+    color: #222;
+    padding: .25rem .5rem;
+    border-radius: 9999px;
+    font-size: .70rem;
+}
+
+.my-courseCard-bodyButtons{
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    gap: .5rem;;
+
+}
+
+.my-courseCard-button{
+    background-color: #d6d6d6;
+    color: #000;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+    font-weight: 600;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    border-width: 1px;
+    border-color: #0009;
+    border-radius: .5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.my-courseCard-button:hover{
+    background-color: #ffffff;
+    color: #000;
+    border-color: #0009;
+    transition: all 0.3s ease-in-out;   
+}
+
+.my-courseCard-button>svg{
+    width: 25%;
+}
+
+.my-courseCard-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.my-courseCard-addButton{
+    background-color: #ffcc01;
+    color: #000;
+    font-weight: 600;
+    border-color: #ffcc01;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    border-width: 1px;
+    border-color: #0009;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.my-courseCard-addButton:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;   
+}
+
+.my-courseCard-addButton.is-added{
+    background-color: #00d8ff;
+    color: #fff;
+    border-color: #00d8ff;
+    transition: all 0.3s ease-in-out;   
+}
+
+.my-courseCard-addButton.is-added:hover{
+    background-color: #f2597331;
+    color: #FFF;
+    border-color: #f25972;
+}
+
+.my-courseCard-addButton:hover{
+    background-color: #ffcc01;
+    color: #000;
+    border-color: #ffcc01;
+}
+
+.my-courseCard-addButton.is-added:hover .my-courseCard-removeButton{
+    display: block;
+}
+
+.my-courseCard-removeButton{
+    display: none;
+}
+
+.my-courseCard-textButton{
+    display: block;
+}
+
+.my-courseCard-addButton.is-added:hover .my-courseCard-textButton{
+    display: none;
+}
