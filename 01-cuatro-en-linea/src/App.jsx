@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import confetti from "canvas-confetti";
 import { Square } from "./components/Square";
 import { Board } from "./components/Board";
@@ -60,7 +60,7 @@ function App() {
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
     setTurn(newTurn);
     // Se guarda el nuevo tablero y el nuevo turno en el localStorage
-    saveGameToStorage(newBoard, newTurn);    
+    // saveGameToStorage({'board':newBoard, 'turn':newTurn});    
 
     // Se envia el nuevo tablero para verificar si hay un ganador
     const newWinner = checkWinnerFrom(newBoard);
@@ -92,7 +92,20 @@ function App() {
 
     resteGameStorage();
   }
-  
+
+  useEffect(() => {
+    console.log('Prueba de useEffect');
+  }, [winner]) // ejecutar cuando el componente se monta por primera vez. Si paso [turn, board, winner] se ejecuta cada vez que cambia el estado de turn, board o winner
+
+  // Se guarda en el storage cada vez que se actualiza el turno o el tablero
+  useEffect(() => {
+    saveGameToStorage({
+      'board':board, 
+      'turn':turn
+    });
+  }, [turn, board]) 
+
+
   return (
     <main className="board">
       <h1>Cuatro en linea</h1>
