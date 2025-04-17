@@ -8,6 +8,7 @@ const FollowMouse = () => {
   // con addEventListener se puede suscribir a eventos del DOM, pero se ejecuta
   // cada vez que se renderiza el componente, por lo que se debe usar useEffect
   // Efecto que ejecuta cuando, se monta y el estado enabled cambia
+  // A los effect no se le pasan parametros, pero pueden acceder a todo el scope de variables,constantes y params de la componente
   useEffect(() => {
     console.log('Efecto 1', { enabled })
 
