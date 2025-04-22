@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import { Target } from './components/Target'
 import { FollowMouse } from './components/FollowMouse'
+import { generateRandomPosition } from './utils/generateRandomPosition'
 
 function App() {
   const [score, setScore] = useState(0)
@@ -26,18 +27,10 @@ function App() {
     const newScore = score + 1
     setScore(newScore)
     // setScore((prevScore) => prevScore + 1)
-    console.log(score)
   }
 
-  const generateRandomPosition = () => {
-    const targetSize = 10 // Tamaño del target
-    const x = Math.floor(Math.random() * (window.innerWidth - targetSize))
-    const y = Math.floor(Math.random() * (window.innerHeight - targetSize))
-    return { x, y }
-  }
 
   useEffect(() => {
-    console.log('effectTarget')
     const randomPosition = generateRandomPosition()
     setPositionTarget(randomPosition)
   }, [score])
@@ -55,22 +48,23 @@ function App() {
 
   return (
     <>
-      {!enabled && <button onClick={initGame}>Iniciar juego</button>}
-      {enabled && 
-        <Target 
-          position={positionTarget}
-          onScore= {addScore}
-        />
-      }	
-      {enabled && <div className='score'>Score: {score}</div>}
-      {enabled && <button onClick={resetGame}>Reiniciar juego</button>}
-      {enabled && 
-        <FollowMouse 
-          enabled={enabled} 
-          positionTarget={positionTarget}
-          onScore={addScore}
-        />
-      }
+      {!enabled ? (
+        <button onClick={initGame}>Iniciar juego</button>
+      ):(
+        <>
+          <Target 
+            position={positionTarget}
+            onScore= {addScore}
+          />
+          <div className='score'>Score: {score}</div>
+          <button onClick={resetGame}>Reiniciar juego</button>
+          <FollowMouse 
+            enabled={enabled} 
+            positionTarget={positionTarget}
+            onScore={addScore}
+          />
+        </>
+      )}
     </>
   )
 }
